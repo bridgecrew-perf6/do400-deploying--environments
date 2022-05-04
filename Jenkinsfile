@@ -26,7 +26,7 @@ pipeline {
                     ./mvnw quarkus:add-extension \
                     -Dextensions="kubernetes,container-image-jib
                 '''
-                ssh '''
+                sh '''
                     ./mvnw package -DskipTests \
                     -Dquarkus.jib.base-jvm-image=quay.io/redhattraining/do400-java-alpine-openjdk11-jre:latest \
                     -Dquarkus.container-image.build=true \
